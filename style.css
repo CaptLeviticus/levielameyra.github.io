@@ -1,102 +1,199 @@
+/* ========== Base / Theme ========== */
 :root{
-  --bg:#0b1220;
-  --card: rgba(255,255,255,.06);
+  --bg0:#070c16;
+  --bg1:#0b1220;
+  --surface: rgba(255,255,255,.06);
+  --surface2: rgba(255,255,255,.08);
   --border: rgba(255,255,255,.10);
-  --text:#e8eefc;
+  --text:#eaf0ff;
   --muted:#b7c2e0;
+  --muted2:#97a5c7;
   --accent:#7aa2ff;
+  --accent2:#9ad4ff;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 18px;
+  --radius2: 22px;
+
+  --container: 1080px;
+  --pad: 18px;
+
+  --h1: clamp(28px, 4vw, 40px);
+  --h2: clamp(18px, 2.4vw, 26px);
+  --h3: 18px;
+  --p: 15.5px;
+  --lh: 1.65;
 }
 
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family: Arial, system-ui, sans-serif;
-  background: linear-gradient(180deg,#070c16,#0b1220);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(122,162,255,.18), transparent 55%),
+              radial-gradient(1000px 600px at 90% 10%, rgba(154,212,255,.14), transparent 50%),
+              linear-gradient(180deg,var(--bg0),var(--bg1));
   color:var(--text);
 }
-.wrap{max-width:1000px;margin:0 auto;padding:28px 16px 64px}
 
+a{color:inherit}
+.wrap{max-width:var(--container); margin:0 auto; padding: 26px 16px 70px}
+
+/* ========== Nav ========== */
 .nav{
   position: sticky;
   top: 0;
-  z-index: 10;
-  backdrop-filter: blur(10px);
-  background: rgba(11,18,32,.75);
+  z-index: 20;
+  backdrop-filter: blur(12px);
+  background: rgba(11,18,32,.70);
   border-bottom: 1px solid var(--border);
 }
 .nav .inner{
-  max-width:1000px;
+  max-width:var(--container);
   margin:0 auto;
-  padding:10px 16px;
+  padding: 10px 16px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:10px;
   flex-wrap:wrap;
 }
-.brand{font-weight:700;letter-spacing:.3px}
-.nav a{
-  color:var(--muted);
-  text-decoration:none;
-  padding:8px 10px;
-  border-radius:10px;
+.brand{
+  font-weight: 750;
+  letter-spacing:.2px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
-.nav a:hover{background:rgba(255,255,255,.07); color:var(--text)}
+.brand .dot{
+  width:10px; height:10px; border-radius:50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 0 6px rgba(122,162,255,.12);
+}
 
+.navlinks{display:flex; gap:6px; flex-wrap:wrap}
+.nav a{
+  color: var(--muted);
+  text-decoration:none;
+  padding: 9px 11px;
+  border-radius: 12px;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.nav a:hover{
+  background: rgba(255,255,255,.07);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+.nav a.active{
+  background: rgba(122,162,255,.18);
+  border: 1px solid rgba(122,162,255,.25);
+  color: var(--text);
+}
+
+/* ========== Layout / Sections ========== */
 .hero{
   display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap:16px;
+  grid-template-columns: 1.3fr .7fr;
+  gap:14px;
+  margin-top: 18px;
 }
-@media(max-width:860px){.hero{grid-template-columns:1fr}}
+@media(max-width: 880px){.hero{grid-template-columns:1fr}}
 
+.sectionTitle{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  margin: 16px 0 10px;
+}
+.sectionTitle h2{margin:0; font-size:var(--h2)}
+.sectionTitle .hint{color:var(--muted2); font-size:13px}
+
+/* ========== Cards ========== */
 .card{
-  background: var(--card);
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 18px;
-  margin-bottom: 14px;
+  border-radius: var(--radius);
+  padding: var(--pad);
+  box-shadow: var(--shadow);
+}
+.card.soft{box-shadow:none; background: rgba(255,255,255,.05)}
+.card:hover{
+  border-color: rgba(122,162,255,.20);
 }
 
-h1{margin:0 0 6px;font-size:34px}
-h2{margin:0 0 12px}
-p{color:var(--muted); line-height:1.6}
+/* ========== Typography ========== */
+h1{margin:0 0 8px; font-size:var(--h1); letter-spacing:-.5px}
+h2{margin:0 0 10px}
+h3{margin:0 0 8px; font-size:var(--h3)}
+p{margin:0; color:var(--muted); font-size:var(--p); line-height:var(--lh)}
+.small{font-size:13px; color:var(--muted2); line-height:1.55}
 
-.btns{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+/* ========== Buttons ========== */
+.btns{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px}
 .btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
   text-decoration:none;
-  color:var(--text);
+  color: var(--text);
   background: rgba(122,162,255,.16);
   border: 1px solid rgba(122,162,255,.35);
-  padding:10px 12px;
-  border-radius:12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
 }
-.btn:hover{background: rgba(122,162,255,.24)}
+.btn:hover{
+  transform: translateY(-1px);
+  background: rgba(122,162,255,.24);
+  border-color: rgba(154,212,255,.45);
+}
+.btn.secondary{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.btn.secondary:hover{
+  background: rgba(255,255,255,.10);
+}
 
-.pills{margin-top:8px}
+/* ========== Pills / Tags ========== */
+.pills{margin-top: 8px}
 .pill{
   display:inline-block;
   background: rgba(255,255,255,.08);
   border: 1px solid rgba(255,255,255,.10);
-  padding:6px 10px;
+  padding: 6px 10px;
   border-radius:999px;
-  margin:6px 6px 0 0;
-  color:var(--muted);
-  font-size:13px;
+  margin: 6px 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
+/* ========== Grids ========== */
 .grid{
   display:grid;
-  grid-template-columns: repeat(2,1fr);
-  gap:14px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
 }
 @media(max-width:760px){.grid{grid-template-columns:1fr}}
 
-img.thumb{
+.thumb{
   width:100%;
-  border-radius:12px;
-  border:1px solid var(--border);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
 }
 
-.small{font-size:13px;color:var(--muted)}
+/* ========== Footer ========== */
+.footer{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  color: var(--muted2);
+  font-size: 13px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
