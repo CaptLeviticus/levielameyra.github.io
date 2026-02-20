@@ -205,3 +205,41 @@ p{margin:0; color:var(--muted); font-size:var(--p); line-height:var(--lh)}
 .wrap > .hero{
   margin-bottom: 32px;
 }
+/* ===== Inner content spacing (Experience & similar pages) ===== */
+
+.card ul{
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.card .pills{
+  margin-top: 14px;
+}
+
+.card h2,
+.card h3{
+  margin-top: 8px;
+}
+
+.card.soft + .card.soft{
+  margin-top: 28px;   /* space between stacked soft cards */
+}
+/* ===== Universal inner spacing for Home & Experience ===== */
+
+.card > h3{
+  margin-top: 18px;
+}
+
+.card > .pills{
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+
+.card > p{
+  margin-top: 10px;
+}
+
+/* space between stacked cards inside same section */
+.card .card.soft{
+  margin-top: 18px;
+}
