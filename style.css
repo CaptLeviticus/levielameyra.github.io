@@ -1,37 +1,42 @@
 /* ========== Base / Theme ========== */
 :root{
-  --bg0:#070c16;
-  --bg1:#0b1220;
-  --surface: rgba(255,255,255,.06);
-  --surface2: rgba(255,255,255,.08);
-  --border: rgba(255,255,255,.10);
-  --text:#eaf0ff;
-  --muted:#b7c2e0;
-  --muted2:#97a5c7;
-  --accent:#7aa2ff;
-  --accent2:#9ad4ff;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --bg0:#0F172A;          /* deep slate */
+  --bg1:#111827;          /* softer dark */
+  --surface: rgba(255,255,255,.04);
+  --surface2: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.08);
+
+  --text:#E2E8F0;
+  --muted:#94A3B8;
+  --muted2:#64748B;
+
+  --accent:#3B82F6;
+  --accent2:#60A5FA;
+
+  --shadow: 0 12px 28px rgba(0,0,0,.35);
+
   --radius: 18px;
   --radius2: 22px;
 
-  --container: 1080px;
-  --pad: 18px;
+  --container: 1100px;
+  --pad: 20px;
 
-  --h1: clamp(28px, 4vw, 40px);
-  --h2: clamp(18px, 2.4vw, 26px);
+  --h1: clamp(32px, 4vw, 48px);
+  --h2: clamp(20px, 2.5vw, 28px);
   --h3: 18px;
   --p: 15.5px;
-  --lh: 1.65;
+  --lh: 1.7;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  background: radial-gradient(1200px 600px at 20% 0%, rgba(122,162,255,.18), transparent 55%),
-              radial-gradient(1000px 600px at 90% 10%, rgba(154,212,255,.14), transparent 50%),
-              linear-gradient(180deg,var(--bg0),var(--bg1));
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:
+    radial-gradient(900px 500px at 20% -10%, rgba(59,130,246,.18), transparent 60%),
+    radial-gradient(700px 500px at 90% 0%, rgba(96,165,250,.12), transparent 60%),
+    linear-gradient(180deg,var(--bg0),var(--bg1));
   color:var(--text);
 }
 
@@ -111,14 +116,26 @@ a{color:inherit}
 /* ========== Cards ========== */
 .card{
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,.06);
   border-radius: var(--radius);
   padding: var(--pad);
   box-shadow: var(--shadow);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
 }
-.card.soft{box-shadow:none; background: rgba(255,255,255,.05)}
+
 .card:hover{
-  border-color: rgba(122,162,255,.20);
+  transform: translateY(-2px);
+  border-color: rgba(59,130,246,.35);
+  box-shadow: 0 14px 34px rgba(0,0,0,.45);
+}
+
+.card.soft{
+  background: rgba(255,255,255,.03);
+  box-shadow: none;
+}
+
+.card.soft:hover{
+  transform: translateY(-1px);
 }
 
 /* ========== Typography ========== */
@@ -129,29 +146,32 @@ p{margin:0; color:var(--muted); font-size:var(--p); line-height:var(--lh)}
 .small{font-size:13px; color:var(--muted2); line-height:1.55}
 
 /* ========== Buttons ========== */
-.btns{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px}
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:8px;
   text-decoration:none;
-  color: var(--text);
-  background: rgba(122,162,255,.16);
-  border: 1px solid rgba(122,162,255,.35);
-  padding: 10px 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  padding: 10px 16px;
   border-radius: 14px;
-  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+  font-weight: 500;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
+
 .btn:hover{
   transform: translateY(-1px);
-  background: rgba(122,162,255,.24);
-  border-color: rgba(154,212,255,.45);
+  box-shadow: 0 6px 18px rgba(59,130,246,.35);
 }
+
 .btn.secondary{
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.08);
+  color: var(--text);
 }
+
 .btn.secondary:hover{
   background: rgba(255,255,255,.10);
 }
@@ -312,7 +332,7 @@ a.card{
 a.card{ text-decoration:none; color:inherit; }
 /* ===== Premium Home Hero ===== */
 .heroPremium{
-  padding: 34px 6px 6px;
+  padding: 60px 6px 10px;
   margin-top: 10px;
 }
 
