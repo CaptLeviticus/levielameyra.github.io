@@ -521,3 +521,18 @@ a.card{ text-decoration:none; color:inherit; }
 @media(max-width:760px){
   .contactGrid{ grid-template-columns: 1fr; }
 }
+/* Portfolio thumbnails: consistent and premium */
+.thumb{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+a.card:hover .thumb{
+  transform: translateY(-2px);
+  border-color: rgba(122,162,255,.35);
+}
