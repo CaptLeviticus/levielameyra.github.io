@@ -536,3 +536,52 @@ a.card:hover .thumb{
   transform: translateY(-2px);
   border-color: rgba(122,162,255,.35);
 }
+/* ---- Premium animated background glow ---- */
+body::before{
+  content:"";
+  position: fixed;
+  inset: -200px;
+  background:
+    radial-gradient(600px 350px at 20% 10%, rgba(122,162,255,.22), transparent 60%),
+    radial-gradient(700px 420px at 90% 20%, rgba(154,212,255,.16), transparent 62%),
+    radial-gradient(600px 420px at 50% 90%, rgba(122,162,255,.10), transparent 65%);
+  filter: blur(20px);
+  opacity: .9;
+  z-index: -1;
+  animation: glowMove 14s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove{
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  100% { transform: translate3d(40px,-30px,0) scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body::before{ animation:none; }
+}
+/* ---- Card polish ---- */
+.card{
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(122,162,255,.28);
+  box-shadow: 0 14px 40px rgba(0,0,0,.42);
+}
+
+/* nicer section spacing */
+.wrap{
+  padding-top: 34px;
+}
+
+.wrap > .card,
+.wrap > .hero{
+  margin-bottom: 34px;
+}
+
+/* subtle divider option */
+.sectionTitle{
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
