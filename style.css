@@ -427,3 +427,91 @@ a.card{ text-decoration:none; color:inherit; }
     animation: none;
   }
 }
+/* =========================================
+   STEP 5 — Premium SaaS polish (safe add-on)
+   Paste at the VERY END of style.css
+   ========================================= */
+
+/* 1) Premium nav: slightly tighter + clearer active */
+.nav{
+  background: rgba(11,18,32,.62);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.nav a{
+  position: relative;
+  font-weight: 500;
+}
+.nav a.active{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.nav a.active::after{
+  content:"";
+  position:absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -9px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: .9;
+}
+
+/* 2) Buttons: nicer press + focus ring */
+.btn{
+  will-change: transform;
+}
+.btn:active{
+  transform: translateY(0px) scale(.98);
+}
+.btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59,130,246,.25), 0 10px 26px rgba(59,130,246,.18);
+}
+.nav a:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59,130,246,.18);
+}
+
+/* 3) Section cards: more “SaaS panel” feel */
+.card.sectionCard{
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.09);
+  background:
+    radial-gradient(900px 260px at 20% 10%, rgba(59,130,246,.10), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.032));
+}
+
+/* 4) Work cards: make thumbnails feel premium */
+.workImg{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+}
+a.card.soft{
+  border: 1px solid rgba(255,255,255,.08);
+}
+a.card.soft:hover{
+  border-color: rgba(59,130,246,.22);
+}
+
+/* subtle image lift on hover */
+a.card.soft:hover .workImg{
+  transform: translateY(-3px);
+  transition: transform .2s ease;
+}
+
+/* 5) Better typography rhythm */
+.heroTitle{
+  letter-spacing: -0.8px;
+}
+.heroSub{
+  color: rgba(226,232,240,.72);
+  line-height: 1.65;
+}
+
+/* 6) Mobile polish: reduce huge hero card padding */
+@media (max-width: 520px){
+  .card.sectionCard{ padding: 18px; }
+  .heroTitle{ font-size: clamp(26px, 7vw, 36px); }
+}
