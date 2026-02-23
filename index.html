@@ -31,42 +31,49 @@
 
     <!-- HERO -->
     <section class="section reveal">
-      <div class="sectionHero">
+      <div class="card">
         <div class="heroSaaS">
-
           <div class="heroLeft">
-            <h1 class="heroTitle">Technical Virtual Assistant for Documentation & Operations</h1>
+            <h1 class="heroTitle">
+              Technical Virtual Assistant for <span class="accentText">Documentation</span> & Operations
+            </h1>
             <p class="heroSub">
               I help teams manage data, streamline processes, and deliver organized documentation for remote projects.
             </p>
 
-            <div class="btns" style="margin-top:16px">
+            <div class="btns">
               <a class="btn" href="contact.html">Hire Me</a>
               <a class="btn secondary" href="portfolio.html">View Portfolio</a>
             </div>
 
-            <div class="pills" style="margin-top:14px">
+            <div class="pills">
               <span class="pill">Remote-ready</span>
               <span class="pill">QA / QC Documentation</span>
               <span class="pill">Spreadsheet Expert</span>
+            </div>
+
+            <div class="trustStrip">
+              <span class="trustChip">Reliable communication</span>
+              <span class="trustChip">Clean documentation</span>
+              <span class="trustChip">Detail-oriented</span>
+              <span class="trustChip">Fast turnaround</span>
             </div>
 
             <p class="small" style="margin-top:12px">📍 San Pedro, Laguna • ✉️ levielameyra@gmail.com</p>
           </div>
 
           <div class="heroRight">
-            <div class="avatarWrap">
-              <div class="avatarHalo"></div>
+            <div class="portraitWrap">
+              <div class="portraitHalo"></div>
 
               <div class="portraitCard">
                 <img class="portraitImg"
                      src="assets/profile.png"
                      alt="Levie profile photo"
-                     onerror="this.style.display='none'; this.closest('.avatarWrap').classList.add('noPhoto');">
+                     onerror="this.closest('.portraitWrap').classList.add('noPhoto');">
                 <div class="portraitFade"></div>
+                <div class="avatarFallback">LL</div>
               </div>
-
-              <div class="avatarFallback">LL</div>
             </div>
           </div>
 
@@ -76,59 +83,85 @@
 
     <!-- WHAT I CAN HELP YOU WITH -->
     <section class="section reveal">
-      <div class="card sectionCard">
+      <div class="card">
         <div class="sectionHeader">
           <h2>What I Can Help You With</h2>
           <div class="hint">Client-ready support</div>
         </div>
 
         <div class="grid3">
-          <div class="card soft serviceCard reveal">
+          <div class="card soft">
             <div class="iconBadge">🧾</div>
-            <h3>Data Entry & Research</h3>
+            <h3 style="margin-top:10px">Data Entry & Research</h3>
             <p class="small">Data management, tracking sheets, web research, and summaries.</p>
           </div>
 
-          <div class="card soft serviceCard reveal">
+          <div class="card soft">
             <div class="iconBadge">📩</div>
-            <h3>Admin & Coordination</h3>
+            <h3 style="margin-top:10px">Admin & Coordination</h3>
             <p class="small">Email support, supplier coordination, follow-ups, and reporting.</p>
           </div>
 
-          <div class="card soft serviceCard reveal">
+          <div class="card soft">
             <div class="iconBadge">💬</div>
-            <h3>Customer Support</h3>
+            <h3 style="margin-top:10px">Customer Support</h3>
             <p class="small">Client inquiries, troubleshooting basics, and clear communication.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SELECTED WORK -->
+    <!-- SELECTED WORK (Product tiles) -->
     <section class="section reveal">
-      <div class="card sectionCard">
+      <div class="card">
         <div class="sectionHeader">
           <h2>Selected Work</h2>
           <div class="hint">Preview-friendly</div>
         </div>
 
-        <div class="grid">
-          <a class="card soft reveal" href="portfolio.html">
-            <img class="workImg" src="assets/portfolio/qa-log-preview.png" alt="QA / QC Logs preview">
-            <h3 style="margin-top:12px">QA / QC Logs</h3>
-            <p class="small">Tracking, checks, and reporting format.</p>
+        <div class="grid2">
+          <a class="card soft tile reveal" href="portfolio.html">
+            <div class="tileTop">
+              <h3>QA / QC Logs</h3>
+              <span class="badge">XLSX</span>
+            </div>
+            <div class="tileMedia">
+              <img src="assets/portfolio/qa-log-preview.png" alt="QA / QC Logs preview">
+            </div>
+            <p class="small tileDesc">Tracking, checks, and reporting format.</p>
           </a>
 
-          <a class="card soft reveal" href="portfolio.html">
-            <img class="workImg" src="assets/portfolio/documentation-support-sop-preview.png" alt="Documentation SOP preview">
-            <h3 style="margin-top:12px">Documentation SOP</h3>
-            <p class="small">Structured processes and repeatable workflow.</p>
+          <a class="card soft tile reveal" href="portfolio.html">
+            <div class="tileTop">
+              <h3>Documentation SOP</h3>
+              <span class="badge">PDF</span>
+            </div>
+            <div class="tileMedia">
+              <img src="assets/portfolio/documentation-support-sop-preview.png" alt="Documentation SOP preview">
+            </div>
+            <p class="small tileDesc">Structured processes and repeatable workflow.</p>
           </a>
 
-          <a class="card soft reveal" href="portfolio.html">
-            <img class="workImg" src="assets/portfolio/vendor-comparison-preview.png" alt="Vendor Comparison preview">
-            <h3 style="margin-top:12px">Vendor Comparison</h3>
-            <p class="small">Pricing/availability comparisons with clean formatting.</p>
+          <a class="card soft tile reveal" href="portfolio.html">
+            <div class="tileTop">
+              <h3>Vendor Comparison</h3>
+              <span class="badge">XLSX</span>
+            </div>
+            <div class="tileMedia">
+              <img src="assets/portfolio/vendor-comparison-preview.png" alt="Vendor Comparison preview">
+            </div>
+            <p class="small tileDesc">Pricing/availability comparisons with clean formatting.</p>
+          </a>
+
+          <a class="card soft tile reveal" href="portfolio.html">
+            <div class="tileTop">
+              <h3>Installation Asset Tracker</h3>
+              <span class="badge">XLSX</span>
+            </div>
+            <div class="tileMedia">
+              <img src="assets/portfolio/asset-tracker-preview.png" alt="Asset tracker preview">
+            </div>
+            <p class="small tileDesc">Asset monitoring spreadsheet for installation tracking.</p>
           </a>
         </div>
       </div>
@@ -136,7 +169,7 @@
 
     <!-- WHY WORK WITH ME -->
     <section class="section reveal">
-      <div class="card sectionCard">
+      <div class="card">
         <div class="sectionHeader">
           <h2>Why Work With Me</h2>
           <div class="hint">Reliable & organized</div>
@@ -159,7 +192,7 @@
 
     <!-- EXPERIENCE HIGHLIGHTS -->
     <section class="section reveal">
-      <div class="card sectionCard">
+      <div class="card">
         <div class="sectionHeader">
           <h2>Experience Highlights</h2>
           <div class="hint">Quick overview</div>
